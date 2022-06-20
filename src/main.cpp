@@ -24,9 +24,8 @@ void loop() {
     failsafe = false;
   }
  if(!failsafe){ //wykonuj tylko jesli failsafe = false
-  delay(40); //delay zeby przekazniki nie dostaly pierdolca, bo przy jakis oscylacjach radiowych moglyby przelaczac stan kilka razy przed pelnym przesterowaniem
+  delay(40); //delay 
      if(my_pwm.getValue()<1150) { //jesli pwm < 1150
-      //Serial.println("dobrze brek");
       ESC.write(0);
       digitalWrite(4, HIGH); //brek on
     }
@@ -46,12 +45,6 @@ void loop() {
       }
     
     
- /* tutaj byl debug wyjebane w to
-    Serial.print("Value: ");
-    Serial.print(power);
-    Serial.print("\tAGE: ");
-    Serial.println(float(my_pwm.getAge()/1000)); //przeskalowane na ms, ustaw failsafe względem tego
- */
 
 
         }
